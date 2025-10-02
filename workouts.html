@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideDown {
+            from { transform: translateY(-40px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .fade-in {
+            animation: fadeIn 1s ease;
+        }
+        .slide-down {
+            animation: slideDown 0.8s cubic-bezier(.77,0,.18,1);
+        }
+        </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workouts</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+</head>
+<body class="bg-black text-white">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent bg-opacity-75 mt-4 rounded-3 shadow-lg w-100 fixed-top slide-down">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center text-white" href="#">
+                <img src="https://t4.ftcdn.net/jpg/04/55/28/91/360_F_455289151_K3eZziBHP0QPGedXjR3Am3y0HWwv9NII.jpg" alt="Logo" width="40" height="40" class="d-inline-block align-text-top rounded-circle me-2">
+                Fitness Center
+            </a>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="landing.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="profile.html">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="workouts.html">Workouts</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+            <button class="btn btn-outline-warning ms-3" id="logoutBtn2">Logout</button>
+        </div>
+    </nav>
+    <div class="container py-5">
+    <h1 class="display-4" style="padding-top:130px;">Workouts</h1>
+
+    <script>
+    // Logout button logic
+    document.addEventListener('DOMContentLoaded', function() {
+        var logoutBtn = document.getElementById('logoutBtn2');
+        if (logoutBtn) {
+            logoutBtn.onclick = function() {
+                localStorage.removeItem('loginUsername');
+                localStorage.removeItem('hasContinued');
+                window.location.assign('index.html');
+            };
+        }
+    });
+    </script>
+    </div>
+</body>
+</html>
